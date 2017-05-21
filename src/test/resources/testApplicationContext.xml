@@ -1,0 +1,17 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="Service" class="com.lenda.takehome.service.WordSearchService">
+        <constructor-arg ref="GameFactory"/>
+    </bean>
+
+    <bean id="GameFactory" class="com.lenda.takehome.service.game.GameFactoryImpl">
+        <constructor-arg ref="FactoryConfig"/>
+    </bean>
+    <bean id="FactoryConfig" class="com.lenda.takehome.service.game.config.FactoryConfigImpl"/>
+
+    <bean id="Dictionary" class="com.lenda.takehome.dictionary.SimpleDictionary"/>
+
+</beans>

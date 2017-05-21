@@ -1,0 +1,15 @@
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d{HH:mm:ss.SSS} [%.15thread] %highlight(%-5level) %cyan(%logger{20}) - %highlight(%msg%n)</Pattern>
+        </layout>
+    </appender>
+
+    <logger name="org.apache" level="DEBUG"/>
+    <logger name="com.lenda" level="TRACE"/>
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+</configuration>
