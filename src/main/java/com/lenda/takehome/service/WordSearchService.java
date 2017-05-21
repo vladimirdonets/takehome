@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Value;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
+ * Service that handles search word requests and game life creation
  * @author vdonets
  */
 public class WordSearchService {

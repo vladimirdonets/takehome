@@ -5,13 +5,15 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
+ * Registers a filter as stated in doc
+ *
  * @author vdonets
  */
 @Configuration
 public class FilterConfig {
 
     @Bean
-    public FilterRegistrationBean greetingFilterRegistrationBean() {
+    public FilterRegistrationBean filterRegistrationBean() {
         FilterRegistrationBean registrationBean = new FilterRegistrationBean();
         registrationBean.setName("originFilter");
         ApiOriginFilter filter = new ApiOriginFilter();

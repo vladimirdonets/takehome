@@ -8,6 +8,8 @@ import java.util.LinkedHashSet;
 import java.util.List;
 
 /**
+ * A single game. Maintains played words and total score
+ *
  * @author vdonets
  */
 public class Game {
@@ -25,6 +27,10 @@ public class Game {
     private final LinkedHashSet<Word> words = new LinkedHashSet<>();
     private final MappedWordFinder wordFinder;
 
+    /**
+     * Adds a successfully played word and updates score
+     * @param word
+     */
     public void addWord(Word word) {
         words.add(word);
         score += word.getScore();
@@ -36,6 +42,10 @@ public class Game {
         id = new Long(super.hashCode());
     }
 
+    /**
+     * This games unique id
+     * @return
+     */
     public Long getId() {
         return id;
     }
@@ -66,7 +76,6 @@ public class Game {
     public LinkedHashSet<Word> getWords() {
         return words;
     }
-
 
 
     @Override

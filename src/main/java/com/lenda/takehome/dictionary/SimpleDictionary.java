@@ -3,7 +3,6 @@ package com.lenda.takehome.dictionary;
 import com.lenda.takehome.service.game.GameFactoryImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -40,6 +39,12 @@ public class SimpleDictionary implements Dictionary {
             logger.trace("loaded [" + words.size() + "] words to dictionary");
     }
 
+    /**
+     * Creates a configured dictionary. Should be used in production
+     *
+     * @param config Spring's config file
+     * @throws IOException
+     */
     public SimpleDictionary(SimpleDictionaryConfig config) throws IOException {
         this(config.getFile());
     }
